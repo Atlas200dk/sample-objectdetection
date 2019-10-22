@@ -1,0 +1,64 @@
+graphs {
+  graph_id: 1676964756
+  priority: 0
+
+  engines {
+    id: 487
+    engine_name: "general_image"
+    side: HOST
+    thread_num: 1
+    so_name: "./libgeneral_image.so"
+    ai_config {
+    }
+  }
+
+  engines {
+    id: 639
+    engine_name: "general_inference"
+    side: DEVICE
+    thread_num: 1
+    so_name: "../../../ascend_lib/libascend_ezdvpp.so"
+    so_name: "./libgeneral_inference.so"
+    ai_config {
+
+      items {
+        name: "model_path"
+        value: "${MODEL_PATH}"
+      }
+
+      items {
+        name: "batch_size"
+        value: "1"
+      }
+    }
+  }
+
+  engines {
+    id: 641
+    engine_name: "general_post"
+    side: HOST
+    thread_num: 1
+    so_name: "./libgeneral_post.so"
+    ai_config {
+
+      items {
+        name: "output_name"
+        value: "prob"
+      }
+    }
+  }
+
+  connects {
+    src_engine_id: 487
+    src_port_id: 0
+    target_engine_id: 639
+    target_port_id: 0
+  }
+
+  connects {
+    src_engine_id: 639
+    src_port_id: 0
+    target_engine_id: 641
+    target_port_id: 0
+  }
+}			
