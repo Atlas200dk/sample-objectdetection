@@ -39,7 +39,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-
+#include "opencv2/imgcodecs/legacy/constants_c.h"
 #include "hiaiengine/log.h"
 #include "opencv2/opencv.hpp"
 #include "tool_api.h"
@@ -89,9 +89,6 @@ enum BBoxIndex {kTopLeftX, kTopLeftY, kLowerRigltX, kLowerRightY, kScore};
 
 }
  // namespace
-
-// register custom data type
-HIAI_REGISTER_DATA_TYPE("EngineTrans", EngineTrans);
 
 HIAI_StatusT GeneralPost::Init(
   const hiai::AIConfig &config,

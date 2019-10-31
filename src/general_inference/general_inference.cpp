@@ -35,7 +35,7 @@
 
 #include <vector>
 #include <sstream>
-
+#include <unistd.h>
 #include "hiaiengine/log.h"
 #include "ascenddk/ascend_ezdvpp/dvpp_process.h"
 #include "opencv2/opencv.hpp"
@@ -63,10 +63,6 @@ const __useconds_t kSleepInterval = 200000;
 const uint32_t kImageInfoLength = 3;
 }
 
-// register custom data type
-HIAI_REGISTER_DATA_TYPE("ConsoleParams", ConsoleParams);
-HIAI_REGISTER_DATA_TYPE("Output", Output);
-HIAI_REGISTER_DATA_TYPE("EngineTrans", EngineTrans);
 
 GeneralInference::GeneralInference() {
   ai_model_manager_ = nullptr;

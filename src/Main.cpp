@@ -30,7 +30,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  * ============================================================================
  */
-#include "main.h"
+#include "Main.h"
 
 #include <cstdlib>
 #include <memory>

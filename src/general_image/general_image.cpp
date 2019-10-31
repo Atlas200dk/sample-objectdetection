@@ -43,6 +43,7 @@
 
 #include "hiaiengine/log.h"
 #include "opencv2/opencv.hpp"
+#include "opencv2/imgcodecs/legacy/constants_c.h"
 #include "tool_api.h"
 
 using hiai::Engine;
@@ -63,10 +64,6 @@ const string kImagePathSeparator = ",";
 const string kPathSeparator = "/";
 
 }
-
-// register custom data type
-HIAI_REGISTER_DATA_TYPE("ConsoleParams", ConsoleParams);
-HIAI_REGISTER_DATA_TYPE("EngineTrans", EngineTrans);
 
 HIAI_StatusT GeneralImage::Init(
     const hiai::AIConfig& config,
@@ -157,6 +154,7 @@ void GeneralImage::GetPathFiles(const string &path, vector<string> &file_vec) {
 bool GeneralImage::ArrangeImageInfo(shared_ptr<EngineTrans> &image_handle,
                                     const string &image_path) {
   // read image using OPENCV
+
   cv::Mat mat = cv::imread(image_path, CV_LOAD_IMAGE_COLOR);
   if (mat.empty()) {
     ERROR_LOG("Failed to deal file=%s. Reason: read image failed.",
