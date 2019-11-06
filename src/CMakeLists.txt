@@ -18,7 +18,7 @@ set(CMAKE_OUTPUT_DIR "out")
 
 set(CMAKE_CXX_FLAGS_RELEASE "-fPIC -O2 -Wall")
 
-execute_process(COMMAND bash ../../../src/prepare_graph.sh RESULT_VARIABLE ret)
+execute_process(COMMAND bash ../../../script/deploy.sh RESULT_VARIABLE ret)
 IF(${ret})
    message(FATAL_ERROR "some error occured!")
 ENDIF(${ret})

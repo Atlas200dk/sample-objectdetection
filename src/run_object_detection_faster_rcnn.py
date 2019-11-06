@@ -35,10 +35,11 @@
 #
 import argparse
 import os
+import re
 import sys
 
 
-CPP_EXE = './workspace_mind_studio_new_sample_objectdetection'
+CPP_EXE = None
 CONCOLE_LIST = ' {} {} {} {} {}'
 
 
@@ -84,10 +85,10 @@ def validate_args(args):
     for path in args.input_path:
         if os.path.isdir(path):
             if not os.listdir(path):
-                eprint('[ERROR] input image folder is empty.')
+                eprint('[ERROR] input image path=%r is empty.' % path)
                 check_flag = False
         elif not os.path.isfile(path):
-            eprint('[ERROR] input images does not exist.')
+            eprint('[ERROR] input image path=%r does not exist.' % path)
             check_flag = False
     if os.path.isfile(args.output_path):
         eprint('[ERROR] argument output_path should be a folder.')
@@ -116,16 +117,36 @@ def assemble_console_params(args):
                                          args.output_categories)
     return console_params
 
+    
+def Init_CPP_EXE():
+    check_flag = True
+    global CPP_EXE
+    file_dir=os.getcwd()
+    count=0
+    for dirpath, dirname, filename in os.walk(file_dir):
+        if count >= 1:
+            break
+        for i in filename:
+            if re.match("workspace_mind_studio",i):
+                CPP_EXE='./'+i
+                break
+    if not CPP_EXE:
+        eprint('[ERROR] excute file does not exist.')
+        check_flag = False
+    return check_flag
+    
+    
 def main():
     """main function to receive console params then call cpp program.
     """
     args = get_args()
     if validate_args(args):
-        if os.path.exists(CPP_EXE):
-            console_params = assemble_console_params(args)
-            os.system(CPP_EXE + console_params)
-        else:
-            eprint('[ERROR] cpp file does not exist.')
+        if Init_CPP_EXE():
+            if os.path.exists(CPP_EXE):
+                console_params = assemble_console_params(args)
+                os.system(CPP_EXE + console_params)
+            else:
+                eprint('[ERROR] cpp file does not exist.')
 
 
 if __name__ == '__main__':

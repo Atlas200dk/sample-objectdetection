@@ -7,7 +7,7 @@ graphs {
     engine_name: "general_image"
     side: HOST
     thread_num: 1
-    so_name: "./libgeneral_image.so"
+    so_name: "./libHost.so"
     ai_config {
     }
   }
@@ -18,7 +18,7 @@ graphs {
     side: DEVICE
     thread_num: 1
     so_name: "../../../ascend_lib/libascend_ezdvpp.so"
-    so_name: "./libgeneral_inference.so"
+    so_name: "./libDevice.so"
     ai_config {
 
       items {
@@ -38,7 +38,7 @@ graphs {
     engine_name: "general_post"
     side: HOST
     thread_num: 1
-    so_name: "./libgeneral_post.so"
+    so_name: "./libHost.so"
     ai_config {
 
       items {
