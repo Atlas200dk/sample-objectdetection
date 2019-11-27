@@ -7,7 +7,7 @@ tools_path="${script_path}/.."
 
 function check_python3_lib()
 {
-    echo "Install python3 libs: pip3 install -r ${tools_path}/presenterserver/requirements..."
+    echo "Check python3 libs ......"
 
     tornado_obj=`cat ${tools_path}/presenterserver/requirements | grep tornado | awk -F'[ =]+' '{print $2}'`
     if [ $? -ne 0 ];then
