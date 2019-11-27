@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sample_objectdetection.iml" filepath="$PROJECT_DIR$/sample_objectdetection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-objectdetection.iml" filepath="$PROJECT_DIR$/sample-objectdetection.iml" />
     </modules>
   </component>
 </project>
