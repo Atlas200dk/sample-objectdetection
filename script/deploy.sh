@@ -4,9 +4,9 @@ app_path="${script_path}/../src"
 
 . ${script_path}/func_util.sh
 
-function build_commen()
+function build_common()
 {
-	echo "build commen lib..."
+	echo "build common lib..."
     bash ${script_path}/build_ezdvpp.sh ${remote_host}
     if [ $? -ne 0 ];then
         echo "ERROR: Failed to deploy ezdvpp"
@@ -45,26 +45,26 @@ function main()
         line=`echo $tmp | awk -F' ' '{print $1}'`
         if [[ $line -ne 1 ]];then
             rm -rf ${script_path}/Tag
-            build_commen
+            build_common
             if [ $? -ne 0 ];then
-                echo "ERROR: Failed to deploy commen lib"
+                echo "ERROR: Failed to deploy common lib"
                 return 1
             else
                 echo "success" > ${script_path}/Tag
             fi
         else
-            [[ "success" = `cat ${script_path}/Tag | grep "^success$"` ]] || build_commen
+            [[ "success" = `cat ${script_path}/Tag | grep "^success$"` ]] || build_common
             if [ $? -ne 0 ];then
-                echo "ERROR: Failed to deploy commen lib"
+                echo "ERROR: Failed to deploy common lib"
                 return 1
             else
                 echo "success" > ${script_path}/Tag
             fi
         fi
     else
-        build_commen
+        build_common
         if [ $? -ne 0 ];then
-            echo "ERROR: Failed to deploy commen lib"
+            echo "ERROR: Failed to deploy common lib"
             return 1
         else
             echo "success" > ${script_path}/Tag
