@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Downloading opencv code..."
-    opencv_download_url="https://codeload.github.com/opencv/opencv/tar.gz/${opencv_version}"
+    opencv_download_url="https://gitee.com/jiangdu/opencv/repository/archive/${opencv_version}?format=tar.gz"
     wget -O ${script_path}/${opencv_version}.ing ${opencv_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${opencv_download_url} connection."
