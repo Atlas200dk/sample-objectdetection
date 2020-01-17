@@ -17,7 +17,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-objectdetection repository at  [https://gitee.com/Atlas200DK/sample-objectdetection](https://gitee.com/Atlas200DK/sample-objectdetection)  to any directory on Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user, for example,  _/home/ascend/sample-objectdetection_.
+    Download all the code in the sample-objectdetection repository at  [https://gitee.com/Atlas200DK/sample-objectdetection](https://gitee.com/Atlas200DK/sample-objectdetection)  to any directory on Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user, for example,  $HOME/sample-objectdetection.
 
 2.  <a name="en-us_topic_0182554604_li2074865610364"></a>Obtain the source network model required by the application.
 
@@ -65,12 +65,11 @@ Before running the application, obtain the source code package and configure the
 
     Run the following commands to add the environment variables  **DDK\_HOME**  and  **LD\_LIBRARY\_PATH**  to the last line:
 
-    **export DDK\_HOME=/home/XXX/tools/che/ddk/ddk**
+    **export DDK\_HOME=$HOME/tools/che/ddk/ddk**
 
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
     >![](public_sys-resources/icon-note.gif) **NOTE:**   
-    >-   **XXX**  indicates the  Mind Studio  installation user, and  **/home/XXX/tools**  indicates the default installation path of the DDK.  
     >-   If the environment variables have been added, skip this step.  
 
     Enter  **:wq!**  to save and exit.
@@ -82,7 +81,7 @@ Before running the application, obtain the source code package and configure the
 
 ## Deployment<a name="en-us_topic_0182554604_section3723145213347"></a>
 
-1.  Access the root directory where the cvnetworkverify application code is located as the  Mind Studio  installation user, for example,  **_/home/ascend/sample-objectdetection_**.
+1.  Access the root directory where the cvnetworkverify application code is located as the  Mind Studio  installation user, for example,  **$HOME/sample-objectdetection**.
 2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library and application.
 
     bash deploy.sh  _host\_ip_ _model\_mode_
