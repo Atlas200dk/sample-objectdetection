@@ -17,11 +17,11 @@
 
 1.  获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-objectdetection](https://gitee.com/Atlas200DK/sample-objectdetection)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-objectdetection_。
+    将[https://gitee.com/Atlas200DK/sample-objectdetection](https://gitee.com/Atlas200DK/sample-objectdetection)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-objectdetection。
 
 2.  <a name="zh-cn_topic_0182554604_li2074865610364"></a>获取此应用中所需要的原始网络模型。
 
-    参考[表1](#zh-cn_topic_0182554604_table19942111763710)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如$HOME/ascend/models/faster\_rcnn。
+    参考[表1](#zh-cn_topic_0182554604_table19942111763710)获取此应用中所用到的原始网络模型及其对应的权重文件，并将其存放到Mind Studio所在Ubuntu服务器的任意目录，例如：$HOME/ascend/models/faster\_rcnn。
 
     **表 1**  检测网络应用使用模型
 
@@ -57,7 +57,7 @@
 
     3.  单击OK开始转换模型。
 
-        模型转换成功后，后缀为.om的Davinci模型存放地址为$HOME/tools/che/model-zoo/my-model/fast\_rcnn。
+        模型转换成功后，后缀为.om的Davinci模型存放地址为：$HOME/tools/che/model-zoo/my-model/fast\_rcnn。
 
 
 4.  以Mind Studio安装用户登录Mind Studio所在Ubuntu服务器，并设置环境变量DDK\_HOME。
@@ -66,12 +66,11 @@
 
     执行如下命令在最后一行添加DDK\_HOME及LD\_LIBRARY\_PATH的环境变量。
 
-    **export DDK\_HOME=/home/XXX/tools/che/ddk/ddk**
+    **export DDK\_HOME=$HOME/tools/che/ddk/ddk**
 
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
-    >![](doc/source/img/icon-note.gif) **说明：**   
-    >-   XXX为Mind Studio安装用户，/home/XXX/tools为DDK默认安装路径。  
+    >![](doc/source/img/icon-note.gif) **说明：**    
     >-   如果此环境变量已经添加，则此步骤可跳过。  
 
     输入:wq!保存退出。
@@ -83,7 +82,7 @@
 
 ## 部署<a name="zh-cn_topic_0182554604_section3723145213347"></a>
 
-1.  以Mind Studio安装用户进入目标检测网络应用代码所在根目录，如_/home/ascend/sample-objectdetection_。
+1.  以Mind Studio安装用户进入目标检测网络应用代码所在根目录，如：$HOME/sample-objectdetection。
 2.  执行部署脚本，进行工程环境准备，包括公共库的编译与部署、应用的编译与部署等操作。
 
     bash deploy.sh  _host\_ip_ _model\_mode_
