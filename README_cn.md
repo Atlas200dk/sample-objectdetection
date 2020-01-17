@@ -57,7 +57,7 @@
 
     3.  单击OK开始转换模型。
 
-        模型转换成功后，后缀为.om的Davinci模型存放地址为：$HOME/tools/che/model-zoo/my-model/fast\_rcnn。
+        模型转换成功后，后缀为.om的Davinci模型存放地址为：$HOME/tools/che/model-zoo/my-model/faster\_rcnn。
 
 
 4.  以Mind Studio安装用户登录Mind Studio所在Ubuntu服务器，并设置环境变量DDK\_HOME。
