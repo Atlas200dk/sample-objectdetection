@@ -57,7 +57,7 @@ Before running the application, obtain the source code package and configure the
 
     3.  Click  **OK**  to start model conversion.
 
-        After successful conversion, a .om Da Vinci model file is generated in the  **$HOME/tools/che/model-zoo/my-model/fast\_rcnn**  directory.
+        After successful conversion, a .om Da Vinci model file is generated in the  **$HOME/tools/che/model-zoo/my-model/faster\_rcnn**  directory.
 
 4.  Log in to Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user and set the environment variable  **DDK\_HOME**.
 
