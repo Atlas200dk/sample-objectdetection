@@ -54,7 +54,7 @@ function download_code()
         fi
     fi
     echo "Download ezdvpp code..."
-    ezdvpp_download_url="https://github.com/Atlas200DKTest/sdk-ezdvpp/repository/archive/1.1.0?format=tar.gz"
+    ezdvpp_download_url="https://github.com/Atlas200DKTest/sdk-ezdvpp/archive/1.1.0.tar.gz"
     wget -O ${script_path}/${ezdvpp_version}.ing ${ezdvpp_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${ezdvpp_download_url} connection."
@@ -67,7 +67,7 @@ function download_code()
         echo "ERROR: uncompress ezdvpp tar.gz file failed, please check ${ezdvpp_download_url} connection."
         return 1
     fi
-    mv ${script_path}/sdk-ezdvpp ${script_path}/ezdvpp
+    mv ${script_path}/sdk-ezdvpp-${ezdvpp_version} ${script_path}/ezdvpp
     rm -rf ${script_path}/${ezdvpp_version}
     rm -rf ${script_path}/${ezdvpp_version}.ing
     return 0
