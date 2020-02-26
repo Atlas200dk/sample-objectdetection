@@ -32,14 +32,14 @@ function check_python3_lib()
     
     if tornado=`python3 -c "import tornado;print(tornado.version)" 2>/dev/null`;then
 		if [ ${tornado} != ${tornado_obj} ];then
-	    	pip3 install tornado==${tornado_obj} 2>/dev/null
+	    	pip3 install tornado==${tornado_obj} -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com 2>/dev/null
      		if [ $? -ne 0 ];then
         		echo "ERROR: install tornado failed, please check your env."
         		return 1
         	fi
 		fi
     else
-		pip3 install tornado==${tornado_obj} 2>/dev/null
+		pip3 install tornado==${tornado_obj} -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com 2>/dev/null
 		if [ $? -ne 0 ];then
 	    	echo "ERROR: install tornado failed, please check your env."
             return 1
@@ -48,33 +48,26 @@ function check_python3_lib()
 
     if protobuf=`python3 -c "import google.protobuf;print(google.protobuf.__version__)" 2>/dev/null`;then
 		if [ ${protobuf} != ${protobuf_obj} ];then
-	    	pip3 install protobuf==${protobuf_obj} 2>/dev/null
+	    	pip3 install protobuf==${protobuf_obj} -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com 2>/dev/null
      	    if [ $? -ne 0 ];then
         		echo "ERROR: install protobuf failed, please check your env."
         		return 1
             fi
 		fi
     else
-		pip3 install protobuf==${protobuf_obj} 2>/dev/null
+		pip3 install protobuf==${protobuf_obj} -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com 2>/dev/null
 		if [ $? -ne 0 ];then
 	    	echo "ERROR: install protobuf failed, please check your env."
             return 1
         fi
     fi 
     
-    if numpy=`python3 -c "import numpy;print(numpy.__version__)" 2>/dev/null`;then
-		if [ ${numpy} != ${numpy_obj} ];then
-	    	pip3 install numpy==${numpy_obj} 2>/dev/null
-     	    if [ $? -ne 0 ];then
-        		echo "ERROR: install numpy failed, please check your env."
-        		return 1
-            fi
-		fi
-    else
-		pip3 install numpy==${numpy_obj} 2>/dev/null
-		if [ $? -ne 0 ];then
-	    	echo "ERROR: install numpy failed, please check your env."
-            return 1
+    numpy_version=`python3 -c "import numpy;print(numpy.__version__)" 2>/dev/null`
+	if [ ! ${numpy_version} ];then
+	    pip3 install numpy -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com 2>/dev/null
+     	if [ $? -ne 0 ];then
+        	echo "ERROR: install numpy failed, please check your env."
+        	return 1
         fi
     fi 
     

@@ -4,45 +4,50 @@ script_path="$( cd "$(dirname ${BASH_SOURCE})" ; pwd -P )"
 remote_host=$1
 ezdvpp_version="1.2.0"
 DEVICE_LIB_PATH="${HOME}/ascend_ddk/device/lib"
+AGENT_PATH="${HOME}/ascend_ddk"
 
 . ${script_path}/func_util.sh
 function download_code()
 {
     #检测本地有没有代码，没有就下载
-    if [ -d ${script_path}/ezdvpp ];then
+    if [ -d ${AGENT_PATH}/ezdvpp ];then
         echo "EZdvpp code if found..."
         return 0
     else
         echo "Download ezdvpp code..."
-        ezdvpp_download_url="https://gitee.com/Atlas200DK/sdk-ezdvpp/repository/archive/1.2.0?format=tar.gz"
-        wget -O ${script_path}/${ezdvpp_version}.ing ${ezdvpp_download_url} --no-check-certificate 1>/dev/null 2>&1
+        ezdvpp_download_url="https://github.com/Atlas200DKTest/sdk-ezdvpp/archive/1.2.0.tar.gz"
+        wget -O ${AGENT_PATH}/${ezdvpp_version}.ing ${ezdvpp_download_url} --no-check-certificate 1>/dev/null 2>&1
         if [[ $? -ne 0 ]];then
             echo "ERROR: download failed, please check ${ezdvpp_download_url} connection."
             return 1
         fi
     fi
 
-    mv ${script_path}/${ezdvpp_version}.ing ${script_path}/${ezdvpp_version}
-    tar -zxvf ${script_path}/${ezdvpp_version} -C ${script_path} 1>/dev/null
+    mv ${AGENT_PATH}/${ezdvpp_version}.ing ${AGENT_PATH}/${ezdvpp_version}
+    tar -zxvf ${AGENT_PATH}/${ezdvpp_version} -C ${AGENT_PATH} 1>/dev/null
     if [[ $? -ne 0 ]];then
         echo "ERROR: uncompress ezdvpp tar.gz file failed, please check ${ezdvpp_download_url} connection."
         return 1
     fi
-    mv ${script_path}/sdk-ezdvpp ${script_path}/ezdvpp
-    rm -rf ${script_path}/${ezdvpp_version}
+    mv ${AGENT_PATH}/sdk-ezdvpp-${ezdvpp_version} ${AGENT_PATH}/ezdvpp
+    rm -rf ${AGENT_PATH}/${ezdvpp_version}
     return 0
 }
 
 function build_ezdvpp()
 {
     echo "Build ezdvpp..."
-    make clean -C ${script_path}/ezdvpp 1>/dev/null
+    if [ -e "${AGENT_PATH}/ezdvpp/out/libascend_ezdvpp.so" ];then
+        echo "EZdvpp so is found.."
+        return 0
+    fi
+    make clean -C ${AGENT_PATH}/ezdvpp 1>/dev/null
     if [[ $? -ne 0 ]];then
         echo "ERROR: compile ezdvpp failed, please check the env."
         return 1
     fi
 
-    make install -C ${script_path}/ezdvpp 1>/dev/null
+    make install -C ${AGENT_PATH}/ezdvpp 1>/dev/null
     if [[ $? -ne 0 ]];then
         echo "ERROR: compile ezdvpp failed, please check the env."
         return 1
@@ -68,7 +73,8 @@ main()
         return 1
     fi
     echo "Finish to deploy ezdvpp"
-
     return 0
 }
 main
+
+
