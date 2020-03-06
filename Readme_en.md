@@ -12,7 +12,7 @@ Before using an open source application, ensure that:
 -   Mind Studio  has been installed.
 -   The Atlas 200 DK developer board has been connected to  Mind Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured.
 
-## Software Preparation<<a name="zh-cn_topic_0203223280_section181111827718"></a>
+## Software Preparation<a name="zh-cn_topic_0203223280_section181111827718"></a>
 
 Before running the application, obtain the source code package and configure the environment as follows.
 
