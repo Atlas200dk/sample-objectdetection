@@ -185,6 +185,7 @@ Before running the application, obtain the source code package and configure the
 ## Running<a name="zh-cn_topic_0203223280_section1620073406"></a>
 
 1. Find the **Run** button in the toolbar in **Mind Studio** tool, click  **Run \> Run 'sample-objectdetection'**, as shown in[Figure 5](zh-cn_topic_0203223280.md#fig93931954162719), the executable program has been executed on the developer board.
+
     **Figure 5**  Executed program<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
     
 
