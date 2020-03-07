@@ -9,8 +9,8 @@ The object detection application runs on the Atlas 200 DK or the AI acceleration
 
 Before using an open source application, ensure that:
 
--   Mind Studio  has been installed.
--   The Atlas 200 DK developer board has been connected to  Mind Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured.
+-   **Mind Studio**  has been installed.
+-   The Atlas 200 DK developer board has been connected to  **Mind Studio**, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured.
 
 ## Software Preparation<a name="zh-cn_topic_0203223280_section181111827718"></a>
 
@@ -53,9 +53,7 @@ Before running the application, obtain the source code package and configure the
 
         Current DDK version number can be obtained by either Mind studio tool or DDK packages.
 
-        -   使用Mind Studio工具查询。
-
-            -    Using **Mind studio** tool.
+        -    Using **Mind studio** tool.
 
              choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1](zh-cn_topic_0203223294.md#fig94023140222).
 
@@ -132,7 +130,7 @@ Before running the application, obtain the source code package and configure the
 
     **./MindStudio.sh**
 
-    After successfully starting Mind Studio, open **sample\_objectdetection**project，as shown in [Figure 2](#zh-cn_topic_0203223280_fig05481157171918)所示。
+    After successfully starting **Mind Studio**, open **sample\_objectdetection**project，as shown in [Figure 2](#zh-cn_topic_0203223280_fig05481157171918).
 
     **Figure 2**  Open objectdetection project<a name="zh-cn_topic_0203223280_fig05481157171918"></a>  
     
@@ -186,9 +184,8 @@ Before running the application, obtain the source code package and configure the
 
 ## Running<a name="zh-cn_topic_0203223280_section1620073406"></a>
 
-1. Find the **Run** button in the toolbar in **Mind Studio** tool, click  **Run \> Run 'sample-objectdetection'**, as shown in[Figure 5](zh-cn_topic_0203223280.md#fig93931954162719)所示，可执行程序已经在开发板执行。
-
-    **图 5**  Executed program<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
+1. Find the **Run** button in the toolbar in **Mind Studio** tool, click  **Run \> Run 'sample-objectdetection'**, as shown in[Figure 5](zh-cn_topic_0203223280.md#fig93931954162719), the executable program has been executed on the developer board.
+    **Figure 5**  Executed program<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
     
 
     ![](figures/zh-cn_image_0208253044.png)
