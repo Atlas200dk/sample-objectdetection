@@ -66,7 +66,7 @@ Before running the application, obtain the source code package and configure the
              
              Obtain DDK version by installed DDK package name.
              
-             The format of DDK package name is: **Ascend\_DDK-\{software version}-\{interface version}-x86\_64.ubuntu16.04.tar.gz**
+             The format of DDK package name is: **Ascend\_DDK-\{software version\}-\{interface version\}-x86\_64.ubuntu16.04.tar.gz**
              
              Where **software version** represents the DDK version.
              
