@@ -57,10 +57,10 @@ Before running the application, obtain the source code package and configure the
 
              choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1](zh-cn_topic_0203223294.md#fig94023140222).
 
-            **Figure 1** DDK version inquiry page<a name="zh-cn_topic_0203223280_zh-cn_topic_0203223294_fig17553193319118"></a>  
-            ![](figures/DDK版本号查询.png "DDK version inquiry page")
+             **Figure 1** DDK version inquiry page<a name="zh-cn_topic_0203223280_zh-cn_topic_0203223294_fig17553193319118"></a>  
+             ![](figures/DDK版本号查询.png "DDK version inquiry page")
 
-            **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**.
+             **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**.
 
         -   Using DDK package
              
