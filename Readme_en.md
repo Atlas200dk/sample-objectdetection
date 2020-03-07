@@ -126,7 +126,7 @@ Before running the application, obtain the source code package and configure the
 1.  Open the corresponding project.
 
 
-    Enter the “**MindStudio-ubuntu/bin**” directory after decompressing the installation package in the command line, for example, **$HOME/MindStudio-ubuntu/bin**. Run the following command to start **Mind Studio**:
+    Enter the “**MindStudio-ubuntu/bin**” directory after decompressing the installation package in the command line as the **Mind Studio** installation user, for example, **$HOME/MindStudio-ubuntu/bin**. Run the following command to start **Mind Studio**:
 
     **./MindStudio.sh**
 
