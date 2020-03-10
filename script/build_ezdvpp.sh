@@ -41,6 +41,14 @@ function build_ezdvpp()
         echo "EZdvpp so is found.."
         return 0
     fi
+
+    ezdvpp_path=`find $DDK_HOME/../RC -maxdepth 3 -name "libDvpp_api.so" 2> /dev/null`
+    if [[ ! ${ezdvpp_path} ]];then
+        echo "[ERROR]libDvpp so can not found"
+    fi
+    ezdvpp_dir_path=`dirname $ezdvpp_path`
+    export NPU_DEV_LIB=${ezdvpp_dir_path}
+    
     make clean -C ${AGENT_PATH}/ezdvpp 1>/dev/null
     if [[ $? -ne 0 ]];then
         echo "ERROR: compile ezdvpp failed, please check the env."

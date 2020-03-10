@@ -48,34 +48,10 @@ function main()
         return 1
     fi
     
-	if tmp=`wc -l ${script_path}/Tag 2>/dev/null`;then
-        line=`echo $tmp | awk -F' ' '{print $1}'`
-        if [[ $line -ne 1 ]];then
-            rm -rf ${script_path}/Tag
-            build_common
-            if [ $? -ne 0 ];then
-                echo "ERROR: Failed to deploy common lib"
-                return 1
-            else
-                echo "success" > ${script_path}/Tag
-            fi
-        else
-            [[ "success" = `cat ${script_path}/Tag | grep "^success$"` ]] || build_common
-            if [ $? -ne 0 ];then
-                echo "ERROR: Failed to deploy common lib"
-                return 1
-            else
-                echo "success" > ${script_path}/Tag
-            fi
-        fi
-    else
-        build_common
-        if [ $? -ne 0 ];then
-            echo "ERROR: Failed to deploy common lib"
-            return 1
-        else
-            echo "success" > ${script_path}/Tag
-        fi
+    build_common
+    if [ $? -ne 0 ];then
+        echo "ERROR: Failed to deploy common lib"
+        return 1
     fi
 	
 	echo "Modify param information in graph.config..."
