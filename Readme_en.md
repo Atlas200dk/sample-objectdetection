@@ -67,7 +67,7 @@ Before using an open source application, ensure that:
 
 3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
     
-    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419></a>  
+    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
     
     ![](figures/deploy_objection.png)
     
