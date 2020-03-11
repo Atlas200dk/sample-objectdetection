@@ -12,114 +12,18 @@ Before using an open source application, ensure that:
 -   **Mind Studio**  has been installed.
 -   The Atlas 200 DK developer board has been connected to  **Mind Studio**, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured.
 
-## Software Preparation<a name="zh-cn_topic_0203223280_section181111827718"></a>
+## Deployment
+1. Deployment: choose either faster deployment or conventional deployment as shown below: 
 
-Before running the application, obtain the source code package and configure the environment as follows.
-
-1.   <a name="zh-cn_topic_0203223280_li953280133816"></a>Obtain the source code package.
-
-
-     Download all the code in the sample-objectdetection repository at  [https://github.com/Atlas200DKTest/sample-objectdetection/tree/1.3x.0.0/](https://github.com/Atlas200DKTest/sample-objectdetection/tree/1.3x.0.0/) to any directory on Ubuntu Server where  **Mind Studio**  is located as the  **Mind Studio**  installation user, for example, these two files must be saved in the same directory, for example, **$HOME/AscendProjects/sample-objectdetection**.
-
-2.  <a name="zh-cn_topic_0203223280_li2074865610364"></a>Obtain the source network model required by the application.
-
-    Obtain the source network model and its weight file used in the application by referring to  [Table 1](#zh-cn_topic_0203223280_table19942111763710)and save them to any directory on the Ubuntu server where  Mind Studio  is located (for example,  **$HOME/models/faster\_rcnn**).
+   1.1 Faster deployment, refer to https://gitee.com/Atlas200DK/faster-deploy .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This faster deployment script can quickly deploy multiple cases, select objectdetection case for this project.
+    >-   This faster deployment automatically performs code download, model conversion and environment variable configuration. For details, choose conventional deployment method, as shown in 1.2.
     
-    **Table  1**  Models used in the detection network application
+   1.2 Conventional deployment, refer to : https://gitee.com/Atlas200DK/sample-README/tree/master/sample-objectdetection .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
-    <a name="zh-cn_topic_0203223280_table19942111763710"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0203223280_row611318123710"><th class="cellrowborder" valign="top" width="11.959999999999999%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0203223280_p81141820376"><a name="zh-cn_topic_0203223280_p81141820376"></a><a name="zh-cn_topic_0203223280_p81141820376"></a>Model Name</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="8.07%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0203223280_p13181823711"><a name="zh-cn_topic_0203223280_p13181823711"></a><a name="zh-cn_topic_0203223280_p13181823711"></a>Model Description</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="79.97%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0203223280_p1717182378"><a name="zh-cn_topic_0203223280_p1717182378"></a><a name="zh-cn_topic_0203223280_p1717182378"></a>Model Download Path</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="zh-cn_topic_0203223280_row1119187377"><td class="cellrowborder" valign="top" width="11.959999999999999%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0203223280_p7118189378"><a name="zh-cn_topic_0203223280_p7118189378"></a><a name="zh-cn_topic_0203223280_p7118189378"></a>faster_rcnn</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="8.07%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0203223280_p151818183718"><a name="zh-cn_topic_0203223280_p151818183718"></a><a name="zh-cn_topic_0203223280_p151818183718"></a>Network model for object detection.</p>
-    <p id="zh-cn_topic_0203223280_p11121816373"><a name="zh-cn_topic_0203223280_p11121816373"></a><a name="zh-cn_topic_0203223280_p11121816373"></a>It is a Faster R-CNN model based on Caffe.</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="79.97%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0203223280_p611318163718"><a name="zh-cn_topic_0203223280_p611318163718"></a><a name="zh-cn_topic_0203223280_p611318163718"></a>Download the source network model file and its weight file by referring to<strong id="en-us_topic_0182554604_b17606155113121"><a name="en-us_topic_0182554604_b17606155113121"></a><a name="en-us_topic_0182554604_b17606155113121"></a> README.md</strong> in <a href="https://github.com/HuaweiAscendTest/models/tree/master/computer_vision/object_detect/faster_rcnn" target="_blank" rel="noopener noreferrer">https://github.com/HuaweiAscendTest/models/tree/master/computer_vision/object_detect/faster_rcnn</a>.</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-3.  Log in to Ubuntu Server where **Mind Studio** is located as the **Mind Studio** installation user, confirm current DDK version and set the  environment variable  **DDK\_HOME**, **tools\_version**, **NPU\_DEVICE\_LIB** and **LD\_LIBRARY\_PATH**.
-
-    1.  <a name="zh-cn_topic_0203223280_zh-cn_topic_0203223294_li61417158198"></a>Find current DDK version number.
-
-        Current DDK version number can be obtained by either Mind studio tool or DDK packages.
-
-        -    Using **Mind studio** tool.
-
-             choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of Mind Studio, DDK version inquiry page will display as [Figure 1](zh-cn_topic_0203223294.md#fig94023140222).
-
-             **Figure 1** DDK version inquiry page<a name="zh-cn_topic_0203223280_zh-cn_topic_0203223294_fig17553193319118"></a>  
-             ![](figures/DDK版本号查询.png "DDK version inquiry page")
-
-             **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**.
-
-        -   Using DDK package
-             
-             Obtain DDK version by installed DDK package name.
-             
-             The format of DDK package name is: **Ascend\_DDK-\{software version\}-\{interface version\}-x86\_64.ubuntu16.04.tar.gz**
-             
-             Where **software version** represents the DDK version.
-             
-             For example:
-             
-             If the name of DDK package is **Ascend\_DDK-1.31.T15.B150-1.1.1-x86\_64.ubuntu16.04.tar.gz**, the DDK version would be **1.31.T15.B150**.
-
-    2.  Set the environment variable.
-
-        **vim \~/.bashrc**
-
-        Run the following commands to add the environment variables  **DDK\_HOME**  and  **LD\_LIBRARY\_PATH**  to the last line:
-
-        **export tools\_version=_1.31.X.X_**
-
-        **export DDK\_HOME=\\$HOME/.mindstudio/huawei/ddk/\\$tools\_version/ddk**
-
-        **export NPU\_DEVICE\_LIB=$DDK\_HOME/../RC/host-aarch64\_Ubuntu16.04.3/lib**
-
-        **export LD\_LIBRARY\_PATH=$DDK\_HOME/lib/x86\_64-linux-gcc5.4**
-
-        >![](public_sys-resources/icon-note.gif) **NOTE：**   
-        >-    **_1.31.X.X_** is the DDK version obtained from [Figure 1](#zh-cn_topic_0203223280_zh-cn_topic_0203223294_li61417158198), it needs be filled according to the inquiry result，for example, **1.31.T15.B150**  
-        >-   If the environment variables have been added, this step can be skipped.
-
-        Enter  **:wq!**  to save and exit.
-
-        Run the following command for the environment variable to take effect:
-         
-        **source \~/.bashrc**
-
-4.  Convert the source network to a model supported by Ascend AI processor.
-
-    1.  Choose  **Tool \> Convert Model**  from the main menu of  Mind Studio. The  **Convert Model**  page is displayed.
-    2.  On the  **Convert Model**  page, perform model conversion configuration.
-        -   set  **Model File** to the model file downloaded in  [Step 2](#zh-cn_topic_0203223280_li2074865610364), the weight file would be automatically matched and filled in **Weight File**.
-        -  Set **Model Name** to model name in [Table 1](#zh-cn_topic_0203223280_table19942111763710)：**faster\_rcnn**.
-
-            ![](figures/zh-cn_image_0208249689.png)
-
-        -   There are two **Input Node** in the Nodes configuration, 1, 3 need to be entered in the first two cells of the node in the second row.
-
-            ![](figures/zh-cn_image_0208252722.png)
-
-        -   **Input Image Size** in AIPP configuration needs to be set to 896、608 respectively, 128 \*16 alignment is required here,  for **Model Image Format**, select BGR888\_U8, and retain default values for other parameters.
-
-            ![](figures/zh-cn_image_0208252809.png)
-
-    3.  Click  **Finish**  to start model conversion.
-
-        After successful conversion, a .om offline model file is generated in : **$HOME/modelzoo/faster\_rcnn/device**.
-
-5.  upload the converted model file(.om file) to “**sample\_objectdetection/script**” directory  in the source code path in [Step 1](#zh-cn_topic_0203223280_li953280133816).
 
 ## Compile<a name="zh-cn_topic_0203223280_section3723145213347"></a>
 
@@ -130,16 +34,16 @@ Before running the application, obtain the source code package and configure the
 
     **./MindStudio.sh**
 
-    After successfully starting **Mind Studio**, open **sample\_objectdetection**project，as shown in [Figure 2](#zh-cn_topic_0203223280_fig05481157171918).
+    After successfully starting **Mind Studio**, open **sample\_objectdetection**project，as shown in [Figure 1](#zh-cn_topic_0203223280_fig05481157171918).
 
-    **Figure 2**  Open objectdetection project<a name="zh-cn_topic_0203223280_fig05481157171918"></a>  
+    **Figure 1**  Open objectdetection project<a name="zh-cn_topic_0203223280_fig05481157171918"></a>  
     
 
     ![](figures/zh-cn_image_0208253269.png)
 
 2.  Configure related project information in **src/param\_configure.conf**.
 
-    **Figure 3**   Configuration file path<<a name="zh-cn_topic_0203223280_fig0391184062214"></a>  
+    **Figure 2**   Configuration file path<<a name="zh-cn_topic_0203223280_fig0391184062214"></a>  
     ![](figures/配置文件路径.png " Configuration file path<")
 
     The configuration file is as follows:
@@ -160,7 +64,18 @@ Before running the application, obtain the source code package and configure the
 
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >-   Note that the "" symbol is no need to be used when filling in parameters.
+
+3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
     
+    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419></a>  
+    
+    ![](figures/deploy_objection.png)
+    
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   Automatic download and compilation will perform if 3rd party libraries are not deployed for the first time of deployment. This process might take some time, please wait patiently. It will not download and compilation repeatedly when recompiling later, deployment is shown as above. 
+    >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
+
+
 3.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](zh-cn_topic_0203223280.md#fig1625447397), **build** and **run** folders will be generated under the directory.
 
     **Figure 4**  Compilation operation and generated files<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
