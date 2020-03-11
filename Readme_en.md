@@ -76,7 +76,7 @@ Before using an open source application, ensure that:
     >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
 
 
-3.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](zh-cn_topic_0203223280.md#fig1625447397), **build** and **run** folders will be generated under the directory.
+4.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](zh-cn_topic_0203223280.md#fig1625447397), **build** and **run** folders will be generated under the directory.
 
     **Figure 4**  Compilation operation and generated files<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
     
@@ -87,7 +87,7 @@ Before using an open source application, ensure that:
     >When you compile the project for the first time, **Build \> Build** is gray and not clickable. Your need to click **Build \> Edit Build Configuration**, configure the compilation parameters and then compile.  
     >![](figures/build_configuration.png)  
 
-4.  Upload the images to be inferred to the directory of the  **HwHiAiUser**  user on the host.
+5.  Upload the images to be inferred to the directory of the  **HwHiAiUser**  user on the host.
 
 
     The image requirements are as follows:
