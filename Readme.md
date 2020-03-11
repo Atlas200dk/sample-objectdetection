@@ -74,7 +74,7 @@
 
 4.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图 编译操作及生成文件](zh-cn_topic_0203223280.md#fig1625447397)所示，会在目录下生成build和run文件夹。
 
-    **图 4**  图4 编译操作及生成文件<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
+    **图 4**  编译操作及生成文件<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
     
 
     ![](figures/zh-cn_image_0208253041.png)
@@ -96,7 +96,7 @@
 
 1.  在Mindstudio工具的工具栏中找到Run按钮，点击  **Run \> Run 'sample-objectdetection'**，如[图 程序已执行示意图](zh-cn_topic_0203223280.md#fig93931954162719)所示，可执行程序已经在开发板执行。
 
-    **图 5**  图5 程序已执行示意图<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
+    **图 5**  程序已执行示意图<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
     
 
     ![](figures/zh-cn_image_0208253044.png)
