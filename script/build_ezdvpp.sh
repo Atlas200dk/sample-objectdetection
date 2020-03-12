@@ -15,7 +15,7 @@ function download_code()
         return 0
     else
         echo "Download ezdvpp code..."
-        ezdvpp_download_url="https://github.com/Atlas200DKTest/sdk-ezdvpp/archive/1.2.0.tar.gz"
+        ezdvpp_download_url="https://github.com/Atlas200dk/sdk-ezdvpp/archive/1.2.0.tar.gz"
         wget -O ${AGENT_PATH}/${ezdvpp_version}.ing ${ezdvpp_download_url} --no-check-certificate 1>/dev/null 2>&1
         if [[ $? -ne 0 ]];then
             echo "ERROR: download failed, please check ${ezdvpp_download_url} connection."

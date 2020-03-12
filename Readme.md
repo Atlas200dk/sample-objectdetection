@@ -1,135 +1,140 @@
-CN|[EN](Readme_en.md)
-# Faster-R-CNN检测网络应用<a name="ZH-CN_TOPIC_0208837806"></a>
+EN|[CN](Readme_cn.md)
 
-本Application支持运行在Atlas 200 DK或者AI加速云服务器上，实现了对faster-rcnn目标检测网络的推理功能。
+# Object Detection<a name="ZH-CN_TOPIC_0208837806"></a>
 
-## 前提条件<a name="zh-cn_topic_0203223280_section137245294533"></a>
+The object detection application runs on the Atlas 200 DK or the AI acceleration cloud server and implements the inference function by using Faster R-CNN object detection network.
 
-部署此Sample前，需要准备好以下环境：
 
--   已完成Mind Studio的安装。
--   已完成Atlas 200 DK开发者板与Mind Studio的连接，交叉编译器的安装，SD卡的制作及基本信息的配置等。
+## Prerequisites<a name="zh-cn_topic_0203223280_section137245294533"></a>
 
-## 部署
-1. 部署，可以选择如下快速部署或者常规方法部署，二选一即可；
+Before using an open source application, ensure that:
 
-   1.1 快速部署，请参考：https://github.com/Atlas200DKTest/faster-deploy.git 。
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该快速部署脚本可以快速部署多个案例，请选择objectdetection案例部署即可。 
-    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式，请转1.2 常规部署。
+-   **Mind Studio**  has been installed.
+-   The Atlas 200 DK developer board has been connected to  **Mind Studio**, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured.
+
+## Deployment
+1. Deployment: choose either faster deployment or conventional deployment as shown below: 
+
+   1.1 Faster deployment, refer to https://github.com/Atlas200dk/faster-deploy.git .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This faster deployment script can quickly deploy multiple cases, select objectdetection case for this project.
+    >-   This faster deployment automatically performs code download, model conversion and environment variable configuration. For details, choose conventional deployment method, as shown in 1.2.
     
-   1.2 常规部署，请参考：https://github.com/Atlas200DKTest/sample-README/tree/master/sample-objectdetection 。
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程会更加了解。
+   1.2 Conventional deployment, refer to : https://github.com/Atlas200dk/sample-README/tree/master/sample-objectdetection .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
 
-## 编译<a name="zh-cn_topic_0203223280_section3723145213347"></a>
+## Compile<a name="zh-cn_topic_0203223280_section3723145213347"></a>
 
-1.  打开对应的工程。
+1.  Open the corresponding project.
 
-    以Mind Studio安装用户在命令行中进入安装包解压后的“MindStudio-ubuntu/bin”目录，如：$HOME/MindStudio-ubuntu/bin。执行如下命令启动Mind Studio。
+
+    Enter the “**MindStudio-ubuntu/bin**” directory after decompressing the installation package in the command line as the **Mind Studio** installation user, for example, **$HOME/MindStudio-ubuntu/bin**. Run the following command to start **Mind Studio**:
 
     **./MindStudio.sh**
 
-    启动成功后，打开**sample\_objectdetection**工程，如[图 打开objectdetection工程](#zh-cn_topic_0203223280_fig05481157171918)所示。
+    After successfully starting **Mind Studio**, open **sample\_objectdetection**project，as shown in [Figure 1](#zh-cn_topic_0203223280_fig05481157171918).
 
-    **图 1**  打开objectdetection工程<a name="zh-cn_topic_0203223280_fig05481157171918"></a>  
+    **Figure 1**  Open objectdetection project<a name="zh-cn_topic_0203223280_fig05481157171918"></a>  
     
 
     ![](figures/zh-cn_image_0208253269.png)
 
-2.  在**src/param\_configure.conf**文件中配置相关工程信息。
+2.  Configure related project information in **src/param\_configure.conf**.
 
-    **图 2**  配置文件路径<a name="zh-cn_topic_0203223280_fig0391184062214"></a>  
-    ![](figures/配置文件路径.png "配置文件路径")
+    **Figure 2**   Configuration file path<<a name="zh-cn_topic_0203223280_fig0391184062214"></a>  
+    ![](figures/配置文件路径.png " Configuration file path<")
 
-    该配置文件内容如下：
+    The configuration file is as follows:
 
     ```
     remote_host=
     ```
 
-    需要手动添加参数配置：
+    Following parameter configuration needs to be added manually：
 
-    remote\_host：Atlas 200 DK开发者板的IP地址。
-
-    配置示例：
+    remote\_host：this parameter indicates the IP address of Atlas 200 DK developer board.
+    
+    An example of configuration is as follows:
 
     ```
     remote_host=192.168.1.2
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   注意参数填写时不需要使用“”符号。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   Note that the "" symbol is no need to be used when filling in parameters.
 
-3.  执行deploy脚本， 进行配置参数调整及第三方库下载编译 打开Mind Studio工具的Terminal，此时默认在代码主目录下，执行如下命令在后台指执行deploy脚本，进行环境部署。如[图 执行deploy脚本](#zh-cn_topic_0182554577_fig19292258105419)所示。
+3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
     
-    **图 3**  执行deploy脚本<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
+    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
     
     ![](figures/deploy_objection.png)
     
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   首次deploy时，没有部署第三方库时会自动下载并编译，耗时可能比较久，请耐心等待。后续再重新编译时，不会重复下载编译，部署如上图所示。
-    >-   deploy时，需要选择与开发板通信的主机侧ip，一般为虚拟网卡配置的ip。如果此ip和开发板ip属于同网段，则会自动选择并部署。如果非同网段，则需要手动输入与开发板通信的主机侧ip才能完成deploy。
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   Automatic download and compilation will perform if 3rd party libraries are not deployed for the first time of deployment. This process might take some time, please wait patiently. It will not download and compilation repeatedly when recompiling later, deployment is shown as above. 
+    >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
 
-4.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图 编译操作及生成文件](zh-cn_topic_0203223280.md#fig1625447397)所示，会在目录下生成build和run文件夹。
 
-    **图 4**  编译操作及生成文件<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
+4.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](zh-cn_topic_0203223280.md#fig1625447397), **build** and **run** folders will be generated under the directory.
+
+    **Figure 4**  Compilation operation and generated files<a name="zh-cn_topic_0203223280_fig21857144016"></a>  
     
 
     ![](figures/zh-cn_image_0208253041.png)
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >首次编译工程时，**Build \> Build**为灰色不可点击状态。需要点击**Build \> Edit Build Configuration**，配置编译参数后再进行编译。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >When you compile the project for the first time, **Build \> Build** is gray and not clickable. Your need to click **Build \> Edit Build Configuration**, configure the compilation parameters and then compile.  
     >![](figures/build_configuration.png)  
 
-5.  将需要推理的图片上传至Host侧任一属组为HwHiAiUser用户的目录。
-
-    图片要求如下：
-
-    -   格式：jpg、png、bmp。
-    -   输入图片宽度：16px\~4096px之间的整数。
-    -   输入图片高度：16px\~4096px之间的整数。
+5.  Upload the images to be inferred to the directory of the  **HwHiAiUser**  user on the host.
 
 
-## 运行<a name="zh-cn_topic_0203223280_section1620073406"></a>
+    The image requirements are as follows:
 
-1.  在Mindstudio工具的工具栏中找到Run按钮，点击  **Run \> Run 'sample-objectdetection'**，如[图 程序已执行示意图](zh-cn_topic_0203223280.md#fig93931954162719)所示，可执行程序已经在开发板执行。
+    -   Format: JPG, PNG, and BMP.
+    -   Width of the input image: the value is an integer ranging from 16px to 4096px.
+    -   Height of the input image: the value is an integer ranging from 16px to 4096px.
 
-    **图 5**  程序已执行示意图<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
+
+## Running<a name="zh-cn_topic_0203223280_section1620073406"></a>
+
+1. Find the **Run** button in the toolbar in **Mind Studio** tool, click  **Run \> Run 'sample-objectdetection'**, as shown in[Figure 5](zh-cn_topic_0203223280.md#fig93931954162719), the executable program has been executed on the developer board.
+
+    **Figure 5**  Executed program<a name="zh-cn_topic_0203223280_fig8208744013"></a>  
     
 
     ![](figures/zh-cn_image_0208253044.png)
 
-    以上报错信息请忽略，因为Mind Studio无法为可执行程序传参，上述步骤是将可执行程序与依赖的库文件部署到开发者板，此步骤需要ssh登录到开发者板至相应的目录文件下手动执行，具体请参考以下步骤。
+     Please ignore the above error, because **Mind Studio** cannot pass parameters for executable programs.  The above steps are to deploy the executable program and the dependent library files to the developer board. This step requires log in to developer board to the corresponding directory file in SSH mode and execute manually. For details, refer to the following steps.
 
-2.  在Mind Studio所在Ubuntu服务器中，以HwHiAiUser用户SSH登录到Host侧。
+2.  Log in to the Host as the  **HwHiAiUser**  user in SSH mode on Ubuntu Server where  Mind Studio  is located.
 
     **ssh HwHiAiUser@**_host\_ip_
 
-    对于Atlas 200 DK，host\_ip默认为192.168.1.2（USB连接）或者192.168.0.2（NIC连接）。
+     For the Atlas 200 DK, the default value of  _**host\_ip**_  is  **192.168.1.2**  \(USB connection mode\) or  **192.168.0.2**  \(NIC connection mode\).
 
-3.  进入faster-rcnn检测网络应用的可执行文件所在路径。
+3.  Go to the path of the executable file of object detection application.
 
-    命令举例如下：
+    Example command:
 
-    cd \~/HIAI\_PROJECTS/workspace\_mind\_studio/sample\_objectdetection\_28ac8121/out
 
-4.  执行应用程序。
+    **cd \~/HIAI\_PROJECTS/workspace\_mind\_studio/sample\_objectdetection\_28ac8121/out**
 
-    执行run\_object\_detection\_faster\_rcnn.py脚本会将推理生成的图片保存至指定路径。
+4.  Run the application.
 
-    命令示例如下所示：
+    Run the  **run\_object\_detection\_faster\_rcnn.py**  script to print the inference result on the execution terminal.
 
-    python3 run\_object\_detection\_faster\_rcnn.py -w  _800_  -h  _600_  -i
+    Example command:
 
-    _./example.jpg_  -o  _./out_  -c  _21_
+    **python3 run\_object\_detection\_faster\_rcnn.py -w  _800_  -h  _600_  -i**
 
-    -   -w/model\_width：模型的输入图片宽度，为16\~4096之间的整数。
-    -   -h/model\_height：模型的输入图片高度，为16\~4096之间的整数。
-    -   -i/input\_path：输入图片的目录/路径，可以有多个输入。
-    -   -o/output\_path：输出图片的目录，默认为当前目录。
-    -   -c/output\_categories：faster\_rcnn检测的类别数\(包含背景\)，为2\~32之间的整数，默认为值为21。
+    **_./example.jpg_  -o  _./out_  -c  _21_**
 
-5.  其他详细参数请执行python3 run\_object\_detection\_faster\_rcnn.py --help命令参见帮助信息。
-
+    -   **-w/model\_width**: width of the input image of a model. The value is an integer ranging from 16 to 4096.
+    -   **-h/model\_height**: height of the input image of a model. The value is an integer ranging from 16 to 4096.
+    -   **-i/input\_path**: directory or path of the input image. You can enter multiple paths.
+    -   **-o/output\_path**: directory for storing output images. The default setting is the current directory.
+    -   **-c/output\_categories**: number of Faster R-CNN detection categories \(including the background\). The value is an integer ranging from 2 to 32. The default value is  **21**.
+    
+5.  For other parameters, run the   **python3 run\_object\_detection\_faster\_rcnn.py --help**  command. For details, see the help information.
