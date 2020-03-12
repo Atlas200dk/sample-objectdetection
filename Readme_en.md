@@ -15,12 +15,12 @@ Before using an open source application, ensure that:
 ## Deployment
 1. Deployment: choose either faster deployment or conventional deployment as shown below: 
 
-   1.1 Faster deployment, refer to https://gitee.com/Atlas200DK/faster-deploy .
+   1.1 Faster deployment, refer to https://github.com/Atlas200DKTest/faster-deploy.git .
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >-   This faster deployment script can quickly deploy multiple cases, select objectdetection case for this project.
     >-   This faster deployment automatically performs code download, model conversion and environment variable configuration. For details, choose conventional deployment method, as shown in 1.2.
     
-   1.2 Conventional deployment, refer to : https://gitee.com/Atlas200DK/sample-README/tree/master/sample-objectdetection .
+   1.2 Conventional deployment, refer to : https://github.com/Atlas200DKTest/sample-README/tree/master/sample-objectdetection .
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
