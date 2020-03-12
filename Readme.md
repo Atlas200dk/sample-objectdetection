@@ -1,4 +1,4 @@
-中文|[英文](Readme_en.md)
+CN|[EN](Readme_en.md)
 # Faster-R-CNN检测网络应用<a name="ZH-CN_TOPIC_0208837806"></a>
 
 本Application支持运行在Atlas 200 DK或者AI加速云服务器上，实现了对faster-rcnn目标检测网络的推理功能。
@@ -13,12 +13,12 @@
 ## 部署
 1. 部署，可以选择如下快速部署或者常规方法部署，二选一即可；
 
-   1.1 快速部署，请参考：https://gitee.com/Atlas200DK/faster-deploy 。
+   1.1 快速部署，请参考：https://github.com/Atlas200DKTest/faster-deploy.git 。
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   该快速部署脚本可以快速部署多个案例，请选择objectdetection案例部署即可。 
     >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式，请转1.2 常规部署。
     
-   1.2 常规部署，请参考：https://gitee.com/Atlas200DK/sample-README/tree/master/sample-objectdetection 。
+   1.2 常规部署，请参考：https://github.com/Atlas200DKTest/sample-README/tree/master/sample-objectdetection 。
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程会更加了解。
 
