@@ -17,7 +17,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-objectdetection repository at  [https://github.com/Atlas200DKTest/sample-objectdetection](https://github.com/Atlas200DKTest/sample-objectdetection)  to any directory on Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user, for example,  $HOME/sample-objectdetection.
+    Download all the code in the sample-objectdetection repository at  [https://github.com/Atlas200dk/sample-objectdetection](https://github.com/Atlas200dk/sample-objectdetection)  to any directory on Ubuntu Server where  Mind Studio  is located as the  Mind Studio  installation user, for example,  $HOME/sample-objectdetection.
 
 2.  <a name="en-us_topic_0182554604_li2074865610364"></a>Obtain the source network model required by the application.
 
@@ -39,7 +39,7 @@ Before running the application, obtain the source code package and configure the
     <td class="cellrowborder" valign="top" width="8.07%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0182554604_p151818183718"><a name="en-us_topic_0182554604_p151818183718"></a><a name="en-us_topic_0182554604_p151818183718"></a>Network model for object detection.</p>
     <p id="en-us_topic_0182554604_p8394945195815"><a name="en-us_topic_0182554604_p8394945195815"></a><a name="en-us_topic_0182554604_p8394945195815"></a>It is a Faster R-CNN model based on Caffe.</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0182554604_p611318163718"><a name="en-us_topic_0182554604_p611318163718"></a><a name="en-us_topic_0182554604_p611318163718"></a>Download the source network model file and its weight file by referring to<strong id="en-us_topic_0182554604_b17606155113121"><a name="en-us_topic_0182554604_b17606155113121"></a><a name="en-us_topic_0182554604_b17606155113121"></a> README.md</strong> in <a href="https://github.com/HuaweiAscendTest/models/tree/master/computer_vision/object_detect/faster_rcnn" target="_blank" rel="noopener noreferrer">https://github.com/HuaweiAscendTest/models/tree/master/computer_vision/object_detect/faster_rcnn</a>.</p>
+    <td class="cellrowborder" valign="top" width="79.97%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0182554604_p611318163718"><a name="en-us_topic_0182554604_p611318163718"></a><a name="en-us_topic_0182554604_p611318163718"></a>Download the source network model file and its weight file by referring to<strong id="en-us_topic_0182554604_b17606155113121"><a name="en-us_topic_0182554604_b17606155113121"></a><a name="en-us_topic_0182554604_b17606155113121"></a> README.md</strong> in <a href="https://github.com/Ascend-Huawei/models/tree/master/computer_vision/object_detect/faster_rcnn" target="_blank" rel="noopener noreferrer">https://github.com/Ascend-Huawei/models/tree/master/computer_vision/object_detect/faster_rcnn</a>.</p>
     </td>
     </tr>
     </tbody>
@@ -160,7 +160,7 @@ Download the dependent software libraries to the  **sample-objectdetection/scrip
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0182554604_p11743164543616"><a name="en-us_topic_0182554604_p11743164543616"></a><a name="en-us_topic_0182554604_p11743164543616"></a>Encapsulates the DVPP interface and provides image and video processing capabilities, such as color gamut conversion and image / video conversion</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0182554604_p87434456368"><a name="en-us_topic_0182554604_p87434456368"></a><a name="en-us_topic_0182554604_p87434456368"></a><a href="https://github.com/Atlas200DKTest/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Atlas200DKTest/sdk-ezdvpp</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0182554604_p87434456368"><a name="en-us_topic_0182554604_p87434456368"></a><a name="en-us_topic_0182554604_p87434456368"></a><a href="https://github.com/Atlas200dk/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Atlas200dk/sdk-ezdvpp</a></p>
 <p id="en-us_topic_0182554604_p4743154512368"><a name="en-us_topic_0182554604_p4743154512368"></a><a name="en-us_topic_0182554604_p4743154512368"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0182554604_filepath17433454366"><a name="en-us_topic_0182554604_filepath17433454366"></a><a name="en-us_topic_0182554604_filepath17433454366"></a><b>ezdvpp</b></span>.</p>
 </td>
 </tr>
