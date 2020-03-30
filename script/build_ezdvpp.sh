@@ -67,7 +67,7 @@ function download_code()
         echo "ERROR: uncompress ezdvpp tar.gz file failed, please check ${ezdvpp_download_url} connection."
         return 1
     fi
-    mv ${script_path}/sdk-ezdvpp-${ezdvpp_version} ${script_path}/ezdvpp
+    mv ${script_path}/sdk-ezdvpp ${script_path}/ezdvpp
     rm -rf ${script_path}/${ezdvpp_version}
     rm -rf ${script_path}/${ezdvpp_version}.ing
     return 0
