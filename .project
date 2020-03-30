@@ -4,5 +4,5 @@
   "project_desc": "",
   "target": "RC",
   "target_id": "RC",
-  "ddk_version": "1.31.T15.B150"
+  "ddk_version": "1.32.0.B080"
 }
